@@ -2,13 +2,14 @@ import React from "react";
 import styles from "./nav-bar.module.scss";
 import classNames from "classnames/bind";
 import LogoBlackImg from "./../logo-black/index";
-const Navbar = ({ scrollDir }) => {
+const Navbar = ({ scrollDir, currentPage }) => {
   const ss = classNames.bind(styles);
-
+  console.log(currentPage);
   return (
     <div
       className={ss(
-        `${scrollDir === "scrolling down" ? "down-wrapper" : "wrapper"}`
+        `${scrollDir === "scrolling down" ? "down-wrapper" : "wrapper"}`,
+        // `${currentPage !== `/` && "down-wrapper"}`
       )}
     >
       <div className={ss("navbar-container")}>

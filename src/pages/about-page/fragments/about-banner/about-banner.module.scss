@@ -1,0 +1,51 @@
+.wrapper {
+  width: 1920px;
+  height: 1040px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: url("../../../../assets/image/about-banner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+    position: fixed;
+
+    top: 0;
+    z-index: -1;
+  .banner-container {
+    width: 100%;
+    height: 100%;
+    max-width: 1180px;
+    display: flex;
+    align-items: center;
+    font-family: "LINESeedKR-Bd";
+    
+    .title-container {
+      width: 100%;
+      height: 300px;
+      position: relative;
+    }
+    .title {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      font-size: 36px;
+      transition: 0.3s;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      left: 10%;
+      // padding-left: 150px;
+      h3 {
+        color: rgb(223, 209, 209);
+        margin: 0;
+        cursor: pointer;
+      }
+      h3:hover {
+        transition: 0.5s all ease-in-out;
+        color: rgb(212, 138, 48);
+      }
+    }
+  }
+}

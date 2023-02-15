@@ -1,16 +1,9 @@
 import { useState, useEffect } from "react";
-import useGetTokyoWeatherData from "./../../../services/get-tokyo-weather-data/index";
-import useGetTokyoWeatherIcon from "../../../services/get-tokyo-weather-icon";
 import { useNavigate,useLocation } from "react-router-dom";
 const useLogic = () => {
-  const getTokyoWeatherData = useGetTokyoWeatherData();
-  const getTokyoWeatherIcon = useGetTokyoWeatherIcon();
   const navigator = useNavigate();
   const location = useLocation();
   const [scrollDir, setScrollDir] = useState("scrolling up");
-  const [weather, setWeather] = useState(null);
-  const [weatherIconCode, setWeatherIconCode] = useState(null);
-  const [weatherIcon, setWeatherIcon] = useState(null);
   const [currentPage, setCurrentPage] = useState('');
   useEffect(() => {
     console.log(location.pathname);
@@ -48,50 +41,9 @@ const useLogic = () => {
   }, [scrollDir]);
   //   console.log(scrollDir);
 
-  const init = async () => {
-    const tokyoWeather = await getTokyoWeatherData();
-    setWeather(tokyoWeather);
-    setWeatherIconCode(tokyoWeather.weather[0].icon);
-  };
-
-  useEffect(() => {
-    init();
-  }, []);
-
-  useEffect(() => {
-    const impl = async () => {
-      const iconSrc = await getTokyoWeatherIcon(weatherIconCode);
-      console.log(iconSrc); // 있음됨 왜??
-      // setWeatherIcon(iconSrc);
-    };
-    impl();
-  }, [weatherIcon]);
-  var monthNames = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December"
-  ];
-  const date = new Date();
-  const day = date.getDate();
-  const month = monthNames[date.getMonth()];
-
 
   return {
     scrollDir,
-    weather,
-    isWeatherLoading: !weather,
-    weatherIcon,
-    day,
-    month,
     navigator,
     currentPage
   };
