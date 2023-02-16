@@ -10,7 +10,7 @@ const AboutPage = () => {
   const ss = classNames.bind(styles);
   return (
     <div className={ss("wrapper")}>
-      <Navbar scrollDir={logic.scrollDir} />
+      <Navbar scrollDir={logic.scrollDir}  />
       <AboutBanner />
       <AboutContents/>
     </div>

@@ -11,9 +11,9 @@ const MainPage = () => {
   const logic = useLogic();
   return (
     <div className={ss("wrapper")}>
-      <Navbar scrollDir={logic.scrollDir} currentPage={logic.currentPage} />
+      <Navbar scrollDir={logic.scrollDir} currentPage={logic.currentPage} navigator={logic.navigator} />
       <MainVideo logic={logic} />
-      {/* <About logic={logic}/> */}
+      <About logic={logic}/>
 
     </div>
   );

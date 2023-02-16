@@ -2,25 +2,30 @@ import React from "react";
 import styles from "./nav-bar.module.scss";
 import classNames from "classnames/bind";
 import LogoBlackImg from "./../logo-black/index";
+import { useNavigate } from "react-router-dom";
+
 const Navbar = ({ scrollDir, currentPage }) => {
   const ss = classNames.bind(styles);
-  console.log(currentPage);
+  const navigator = useNavigate();
   return (
     <div
       className={ss(
-        `${scrollDir === "scrolling down" ? "down-wrapper" : "wrapper"}`,
+        `${scrollDir === "scrolling down" ? "down-wrapper" : "wrapper"}`
         // `${currentPage !== `/` && "down-wrapper"}`
       )}
     >
       <div className={ss("navbar-container")}>
         <div className={ss("menu-container")}>
           {scrollDir === "scrolling down" && (
-            <LogoBlackImg style={{ width: "200px", cursor: "pointer" }} />
+            <LogoBlackImg
+              onClick={() => navigator("/")}
+              style={{ width: "200px", cursor: "pointer" }}
+            />
           )}
 
           {scrollDir === "scrolling up" && <div className={ss("block")}></div>}
           <div className={ss("menu-list")}>
-            <span>About</span>
+            <span onClick={() => navigator("/about")}>About</span>
             <span>Travel</span>
           </div>
         </div>

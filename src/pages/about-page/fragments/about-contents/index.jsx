@@ -11,6 +11,7 @@ const AboutContents = () => {
         <div className={ss("contents")}>
           <div className={ss("content1")}>
             <div>
+              <h3>코로나와 애니메이션</h3>
               <p>
                 2020년, 코로나 팬데믹으로 우리의 일상이 몇 년간 멈춰있던 당시
               </p>
@@ -44,6 +45,18 @@ const AboutContents = () => {
             </div>
             <AboutContentImg1 style={{ width: "300px" }} />
           </div>
+          <div className={ss('content1')}>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+          </div>
         </div>
       </div>
     </div>
@@ -51,3 +64,4 @@ const AboutContents = () => {
 };
 
 export default AboutContents;
+
