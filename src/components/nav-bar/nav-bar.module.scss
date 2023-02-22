@@ -5,7 +5,9 @@
   justify-content: center;
   align-items: center;
   font-family: "LINESeedKR-Bd";
-  color: #FFF;
+  color: #fff;
+  position: fixed;
+  z-index: 1;
 
   .navbar-container {
     max-width: 1180px;
@@ -23,10 +25,11 @@
       gap: 90px;
       justify-content: center;
       align-items: center;
+
       .menu-list {
         display: flex;
         gap: 50px;
-     
+
         span {
           cursor: pointer;
           font-size: 24px;
@@ -38,6 +41,16 @@
           user-select: none;
         }
       }
+
+      .logo {
+        visibility: hidden; // display: none;
+        width: 200px;
+        cursor: pointer;
+      }
+      .logo-scroll-down {
+        visibility: visible; // display: none;
+        // display: block;
+      }
     }
     .service-container {
       display: flex;
@@ -53,67 +66,16 @@
           user-select: none;
         }
         span:hover {
-            color: #df5252;
-            user-select: none;
+          color: #df5252;
+          user-select: none;
         }
       }
     }
   }
 }
 
-.down-wrapper {
-  width: 100vw;
-  height: 63px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "LINESeedKR-Bd";
-  position: fixed;
+.wrapper-scroll-down {
   background-color: white;
-  top: 0;
-  .navbar-container {
-    max-width: 1180px;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .menu-container {
-      display: flex;
-      gap: 90px;
-      justify-content: center;
-      align-items: center;
-
-      .menu-list {
-        display: flex;
-        gap: 50px;
-
-        span {
-          cursor: pointer;
-          font-size: 24px;
-          transition: 0.3s;
-        }
-        span:hover {
-          color: rgb(211, 136, 136);
-        }
-      }
-    }
-    .service-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      .menu-list {
-        display: flex;
-        gap: 20px;
-        span {
-          cursor: pointer;
-          font-size: 18px;
-          transition: 0.3s;
-        }
-        span:hover {
-          color: rgb(211, 136, 136);
-        }
-      }
-    }
-  }
+  color: #000;
+  transition: 0.3s;
 }

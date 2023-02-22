@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "./../../components/nav-bar/index";
+import Navbar from "../../components/nav-bar/index";
 import classNames from "classnames/bind";
 import styles from "./main-page.module.scss";
 import useLogic from "./use-logic";
@@ -11,10 +11,9 @@ const MainPage = () => {
   const logic = useLogic();
   return (
     <div className={ss("wrapper")}>
-      <Navbar scrollDir={logic.scrollDir} currentPage={logic.currentPage} navigator={logic.navigator} />
+      <Navbar.Auto />
       <MainVideo logic={logic} />
       <About logic={logic}/>
-
     </div>
   );
 };

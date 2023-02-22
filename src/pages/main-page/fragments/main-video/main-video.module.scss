@@ -1,50 +1,50 @@
 .wrapper {
   width: 100vw;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  position: fixed; //수정요망
-  top: 0;
-  z-index: -1;
-
   .video-container {
     width: 100%;
     height: 100%;
-    position: absolute;
-  }
-  .weather-container {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    font-family: "LINESeedKR-Bd";
-
-    .weather-contents {
-      width: auto;
-      height: 180px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    .weather-container {
+      max-width: 1180px;
+      width: 100%;
+      height: 300px;
+      font-family: "LINESeedKR-Bd";
       position: absolute;
-      right: 300px;
-      top: 500px;
+      top: 50%;
       display: flex;
-      justify-content: center;
-      flex-direction: column;
+      justify-content: flex-end;
       align-items: center;
-      gap: 5px;
-      .weather-icon{
-        width: 240px;
-        height: 120px;
+      .weather-contents {
+        width: auto;
+        height: 180px;
         display: flex;
         justify-content: center;
+        flex-direction: column;
         align-items: center;
-      }
-      h4{
-        margin: 0;
-        font-size:40px;
-        color: white;
-      }
-      span{
-        font-size: 24px;
-        color: white;
+        gap: 5px;
+        .weather-icon {
+          width: 240px;
+          height: 120px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        h4 {
+          margin: 0;
+          font-size: 40px;
+          color: white;
+        }
+        span {
+          font-size: 24px;
+          color: white;
+        }
       }
     }
   }

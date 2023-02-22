@@ -3,7 +3,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: royalblue;
   .contents-container {
     width: 100%;
     max-width: 1180px;
@@ -17,8 +16,11 @@
       padding: 20px;
       width: 100%;
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      background-color: #ccc;
+      background-color: #fdf7f7;
+      border-top: 1px solid black;
+      border-bottom: 1px solid black;
     }
   }
 }
