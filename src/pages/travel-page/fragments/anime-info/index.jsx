@@ -2,15 +2,14 @@ import React, { useState } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
 import classNames from "classnames/bind";
 import styles from "./anime-info.module.scss";
-import AnimePoster from "./../../../../components/anime-poster/index";
+import AnimePoster from "./../../../../components/anime-poster";
 import { BiChevronDown, BiChevronUp, BiChevronsRight } from "react-icons/bi";
-
 import SwiperCore, { Autoplay, Pagination, Scrollbar } from "swiper";
-
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+import "./swiper.css";
 
 SwiperCore.use([Autoplay, Pagination, Scrollbar]);
+
 const AnimeInfo = ({ logic }) => {
   const ss = classNames.bind(styles);
   const [storyMenuOpen, setStoryMenuOpen] = useState(false);
@@ -21,14 +20,14 @@ const AnimeInfo = ({ logic }) => {
     );
   }
   const anime = logic.currentAnime;
-  const relatedPlaces = logic.relatedPlaces;
-  console.log(relatedPlaces);
+  const places = logic.places;
   return (
     <div className={ss("card-container")}>
       <div className={ss("card-main")}>
         <div className={ss("card-header")}>{anime.title}</div>
         <div className={ss("card-contents")}>
           <Swiper
+            key={logic.swiperVersion}
             className={`my-swiper ${ss("carousel-container")}`}
             slidesPerView={1}
             autoplay={{
@@ -56,15 +55,29 @@ const AnimeInfo = ({ logic }) => {
           onClick={() => setStoryMenuOpen(!storyMenuOpen)}
         >
           <span>스토리 요약</span>
-          {storyMenuOpen ? <BiChevronDown  className={ss("arrow-down")}/> : <BiChevronUp className={ss("arrow-down")} />}
-      
+          {storyMenuOpen ? (
+            <BiChevronUp className={ss("arrow-down")} />
+          ) : (
+            <BiChevronDown className={ss("arrow-down")} />
+          )}
         </div>
-        {storyMenuOpen && <p> {anime.story}</p>}
+        {storyMenuOpen && (
+          <div className={ss("content")}>
+            {storyMenuOpen && <p> {anime.story}</p>}
+          </div>
+        )}
       </div>
       <div className={ss("relatedplace-list")}>
-        {relatedPlaces.map((relatedPlace) => (
-          <span>
-            <BiChevronsRight/>{relatedPlace.name}
+        {places.map((place, i) => (
+          <span
+            key={i}
+            onClick={() => {
+              logic.selectDepartureArea(place);
+              logic.requsetModalOpen();
+            }}
+          >
+            <BiChevronsRight />
+            {place.name}
           </span>
         ))}
       </div>

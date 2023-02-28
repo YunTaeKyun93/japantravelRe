@@ -1,13 +1,13 @@
 import React, { useState, useRef, useEffect } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
 
-const useMap = ({ center }) => {
+const useMap = ({ center, zoom }) => {
   const mapRef = useRef();
   const [map, setMap] = useState();
-  const [zoom, setZoom] = useState(10);
+  // const [zoom, setZoom] = useState(10);
 
   const initializeGoogleMapIfNotInitialized = (elem) => {
-
+    // console.log({ elem });
     if (elem == null) {
       return;
     }
@@ -17,7 +17,7 @@ const useMap = ({ center }) => {
       setMap(
         new window.google.maps.Map(elem, {
           center,
-          zoom
+          zoom,
         })
       );
     }
@@ -27,10 +27,27 @@ const useMap = ({ center }) => {
     if (!map) {
       return;
     }
-
+  
     map.setCenter(center);
-    setZoom(20);
   }, [center]);
+
+  useEffect(() => {
+    if (!map) {
+      return;
+    }
+  
+    map.setZoom(zoom);
+  }, [zoom]);
+
+  // useEffect(() => {
+  //   if (!map) {
+  //     return;
+  //   }
+  
+  //   map.setCenter(center);
+  //   map.setZoom(zoom);
+  // }, [zoom, center]);
+
 
   const render = (status) => {
     return (

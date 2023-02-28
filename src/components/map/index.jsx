@@ -9,43 +9,27 @@ import styles from "./map.module.scss";
 const emptyArray = [];
 
 
-// const center = {
-//   lat: -3.745,
-//   lng: -38.523
-// };
-// const Map = ({ center }) => {
-//   const ss = classNames.bind(styles);
-//   const apiKey = useGoogleMapApiKey();
-
-//   return (
-//     <LoadScript googleMapsApiKey={apiKey}>
-//       <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>
-//         {/* Child components, such as markers, info windows, etc. */}
-//         <></>
-//       </GoogleMap>
-//     </LoadScript>
-//   );
-// };
 
 const Map = ({
   center,
   mediaMarkers = emptyArray,
   requsetModalOpen,
   currentMedia,
-  setSelectedPlace
+  selectDepartureArea,
+  zoom = 10,
 }) => {
-
   const ss = classNames.bind(styles);
   const apiKey = useGoogleMapApiKey();
   const { map, initializeGoogleMapIfNotInitialized, render } = useMap({
-    center
+    center,
+    zoom,
   });
   useMediaMarkers({
     map,
     mediaMarkers,
     requsetModalOpen,
     currentMedia,
-    setSelectedPlace
+    selectDepartureArea
   });
   return (
     <Wrapper apiKey={apiKey} render={render}>

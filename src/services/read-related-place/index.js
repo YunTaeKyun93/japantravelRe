@@ -1,16 +1,18 @@
 import axios from "axios";
 import useApiAddress from "../api-address/index";
 
-const useReadRelatedPlacecs = () => {
+const useReadRelatedPlace = () => {
   const apiAddress = useApiAddress();
   return async (placeId) => {
-  
     const axiosResult = await axios({
       method: "get",
-      url: `${apiAddress}/places`,
+      url: `${apiAddress}/relatedPlaces`,
       params: { placeId }
     });
-    return axiosResult.data;
+    
+    const relatedPlaceImage = axiosResult.data.relatedPlaceImage;
+  
+    return relatedPlaceImage
   };
 };
-export default useReadRelatedPlacecs;
+export default useReadRelatedPlace;

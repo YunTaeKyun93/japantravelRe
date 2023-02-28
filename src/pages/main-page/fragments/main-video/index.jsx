@@ -13,7 +13,6 @@ const MainVideo = ({ logic }) => {
   const weather = logic.weather;
   const fahrenheit = weather?.main.temp * 1.8 + 32;
   const fah = Math.round(fahrenheit * 100) / 100;
-  console.log(logic.weatherIcon);
   return (
     <div className={ss("wrapper")}>
       <div className={ss("video-container")}>

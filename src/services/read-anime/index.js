@@ -1,17 +1,16 @@
-import useApiAddr from "../api-address";
+import useApiAddress from "../api-address";
 import axios from "axios";
 
 const useReadAnime = () => {
-  const apiAddr = useApiAddr();
+  const apiAddress = useApiAddress();
 
   return async (animeId) => {
     const axiosResult = await axios({
       method: "get",
-      url: `${apiAddr}/animeList/${animeId}`,
+      url: `${apiAddress}/animeList/${animeId}`,
     });
     
     const result = axiosResult.data;
-    console.log('anime',result)
     return result;
   };
 };

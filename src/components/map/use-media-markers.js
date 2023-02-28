@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 
-const infoWindowContents = ({ title }) => `
+const infoWindowContents = ({ title, description }) => `
 <div>
   <h3 style="color: royalblue">${title}</h3>
+  <p style="font-size:14px">${description}</p>
 </div>
 `;
 
@@ -10,11 +11,10 @@ const useMediaMarkers = ({
   map,
   mediaMarkers,
   requsetModalOpen,
-  setSelectedPlace
+  selectDepartureArea
 }) => {
   const [mediaMarkerInsts, setMediaMarkerInsts] = useState([]);
   const updateMediaMarkers = () => {
-    // 맵이 초기화가 되지 않으면, 다음번에 실행
     if (map == null) {
       return;
     }
@@ -23,10 +23,10 @@ const useMediaMarkers = ({
 
     // 마커를 생성한다.
     const newMediaMarkerInsts = mediaMarkers.map((marker) => {
-      console.log("marker", marker);
       const infoWindow = new window.google.maps.InfoWindow({
         content: infoWindowContents({
-          title: marker.name
+          title: marker.name,
+          description: marker.description
         }),
         ariaLabel: marker.name
       });
@@ -40,7 +40,7 @@ const useMediaMarkers = ({
 
       newMediaMarkerInst.addListener("click", () => {
         requsetModalOpen();
-        setSelectedPlace(marker);
+        selectDepartureArea(marker);
       });
 
       newMediaMarkerInst.addListener("mouseover", () => {
