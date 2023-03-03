@@ -40,6 +40,7 @@ const useMediaMarkers = ({
 
       newMediaMarkerInst.addListener("click", () => {
         requsetModalOpen();
+        console.log(1, marker);
         selectDepartureArea(marker);
       });
 

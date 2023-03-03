@@ -25,7 +25,9 @@ const useLogic = () => {
   const [selectedRelatedPlace, setSelctedRelatedPlacec] = useState(null);
 
   const selectDepartureArea = async (place) => {
+    console.log(1.5, place);
     setSelectedPlace(place);
+    console.log(2, selectedPlace);
     setFocusedLocation({
       position: place.coordinates,
       name: place.name
@@ -60,7 +62,7 @@ const useLogic = () => {
     const impl = async () => {
       if (selectedPlace == null) return;
       const relatedPlace = await getRelatedPlace(selectedPlace);
-
+      console.log(3, relatedPlace);
       setSelctedRelatedPlacec(relatedPlace);
     };
     impl();

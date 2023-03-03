@@ -5,6 +5,7 @@ import styles from "./main-page.module.scss";
 import useLogic from "./use-logic";
 import MainVideo from "./fragments/main-video/index";
 import About from './fragments/about/index';
+import Footer from './../../components/footer/index';
 
 const MainPage = () => {
   const ss = classNames.bind(styles);
@@ -14,6 +15,7 @@ const MainPage = () => {
       <Navbar.Auto />
       <MainVideo logic={logic} />
       <About logic={logic}/>
+      <Footer/>
     </div>
   );
 };

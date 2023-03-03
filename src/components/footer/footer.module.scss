@@ -1,0 +1,36 @@
+.wrapper {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  font-family: "LINESeedKR-Bd";
+  border-top: 1px solid black;
+  margin-top: 100px;
+
+  .footer-container {
+    padding: 20px;
+    max-width: 1180px;
+    width: 100%;
+    .logo {
+      cursor: pointer;
+      width: 250px;
+    }
+    .footer-description {
+      display: flex;
+      justify-content: center;
+    }
+    .copyright {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+      p{
+        margin: 0;
+        font-size: 14px;
+      }
+      .copyright-logo {
+        cursor: pointer;
+      }
+    }
+  }
+}

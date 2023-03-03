@@ -2,4 +2,47 @@
   max-width: 1180px;
   width: 100%;
   border: 1px solid black;
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: "LINESeedKR-Bd";
+  .close-btn {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 20px;
+    transition: 0.5s;
+    .close{cursor: pointer;}
+    :hover {
+      transform: rotate(180deg);
+      color: red;
+      transition: 0.5s;
+    }
+  }
+  .image-container {
+    width: 100%;
+    display: flex;
+    .carousel-container {
+      width: 580px;
+      height: 480px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      .poster-img {
+        width: 590px;
+        height: 500px;
+      }
+    }
+  }
+  .border {
+    width: 100%;
+    height: 2px;
+    background-color: gray;
+  }
+  .conent-container {
+  }
 }

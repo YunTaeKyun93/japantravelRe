@@ -6,13 +6,14 @@ import useLogic from "./use-logic";
 import TravelBanner from "./fragments/travel-banner/";
 import TravelContents from "./fragments/travel-contents";
 import MediaModal from "../../modals/media-modal";
+import Footer from './../../components/footer/index';
 
 const TravelPage = () => {
   const logic = useLogic();
   const ss = classNames.bind(styles);
   return (
     <div className={ss("wrapper")}>
-      <Navbar />
+      <Navbar.Auto />
       <TravelBanner />
       <TravelContents logic={logic} />
       <MediaModal
@@ -20,6 +21,7 @@ const TravelPage = () => {
         onRequestClose={() => logic.setIsMediaModalOpen(false)}
         logic={logic}
       />
+      <Footer/>
     </div>
   );
 };

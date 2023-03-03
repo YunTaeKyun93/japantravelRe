@@ -45,25 +45,18 @@ const NavBar2 = ({ isBackgroundActive = true }) => {
               isBackgroundActive && ss("logo-scroll-down")
             )}
           />
-          {/* {scrollDir === "scrolling down" && (
-            <LogoBlackImg
-              onClick={() => navigator("/")}
-              style={{ width: "200px", cursor: "pointer" }}
-            />
-          )}
-
-          {scrollDir === "scrolling up" && <div className={ss("block")}></div>} */}
           <div className={ss("menu-list")}>
             <span onClick={() => navigator("/about")}>About</span>
             <span onClick={() => navigator("/travel")}>Travel</span>
+            <span onClick={() => navigator("/manholes")}>Manhole</span>
           </div>
         </div>
-        <div className={ss("service-container")}>
+        {/* <div className={ss("service-container")}>
           <div className={ss("menu-list")}>
             <span>Sign In</span>
             <span>Sign Up</span>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
@@ -78,7 +71,6 @@ const AutoNavBar2 = () => {
       const triggerPos = 50;
 
       const newIsUp = pos < triggerPos;
-      // console.log("newIsUp", newIsUp);
       if (newIsUp !== isUp) {
         setIsUp(newIsUp);
       }
@@ -91,18 +83,6 @@ const AutoNavBar2 = () => {
 NavBar2.Auto = AutoNavBar2;
 
 export default NavBar2;
-
-
-
-
-
-
-
-
-
-
-
-
 
 const Navbar = ({ scrollDir, currentPage }) => {
   const ss = classNames.bind(styles);

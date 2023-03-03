@@ -10,27 +10,24 @@ const AnimeSelectMenu = ({ logic }) => {
 
   return (
     <div className={ss("menu")}>
-      <div className={ss("anime-menu")}>
+      <div
+        className={ss("anime-menu")}
+        onClick={() => setIsAnimeListOpen(!isAnimeListOpen)}
+      >
         애니메이션 목록
         {isAnimeListOpen ? (
-          <BiChevronUp
-            className={ss("arrow")}
-            onClick={() => setIsAnimeListOpen(!isAnimeListOpen)}
-          />
+          <BiChevronDown className={ss("arrow")} />
         ) : (
-          <BiChevronDown
-            className={ss("arrow")}
-            onClick={() => setIsAnimeListOpen(!isAnimeListOpen)}
-          />
+          <BiChevronUp className={ss("arrow")} />
         )}
       </div>
-      <div className={ss(`${isAnimeListOpen ? "anime-list" : "close-list"}`)}>
+      <div className={ss(`${isAnimeListOpen ? "close-list" : "anime-list"}`)}>
         {logic.animeList.map((anime) => (
           <span
             key={anime._id}
             onClick={() => {
               logic.setSelectedAnime(anime._id);
-              setIsAnimeListOpen(false);
+              setIsAnimeListOpen(true);
             }}
           >
             <BiChevronsRight /> {anime.title}

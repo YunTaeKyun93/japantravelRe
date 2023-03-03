@@ -15,9 +15,7 @@ const AnimeInfo = ({ logic }) => {
   const [storyMenuOpen, setStoryMenuOpen] = useState(false);
 
   if (logic.isAnimeInfoLoading) {
-    return (
-      <ClipLoader color="red" loading={logic.isAnimeInfoLoading} size={150} />
-    );
+    return <div></div>;
   }
   const anime = logic.currentAnime;
   const places = logic.places;
@@ -73,7 +71,6 @@ const AnimeInfo = ({ logic }) => {
             key={i}
             onClick={() => {
               logic.selectDepartureArea(place);
-              logic.requsetModalOpen();
             }}
           >
             <BiChevronsRight />
