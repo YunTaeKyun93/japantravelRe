@@ -11,15 +11,100 @@
     justify-content: center;
     align-items: center;
     font-family: "LINESeedKR-Bd";
-
-    .content1 {
-      padding: 20px;
+    .mobile-header {
+      display: none;
+    }
+    .content {
+      padding: 20px 0;
       width: 100%;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
       border-top: 1px solid black;
       border-bottom: 1px solid black;
+
+      .image {
+        width: 500px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .wrapper {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .contents-container {
+      width: 100%;
+      max-width: 768px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: "LINESeedKR-Bd";
+      .mobile-header {
+        display: block;
+        font-family: 'Cafe24Ohsquare';
+
+      }
+      .content {
+        padding:10px;
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        .content-description{
+          max-width: 400px;
+          font-size: 12px;
+
+        }
+       
+        .image {
+          width: 300px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .wrapper {
+    margin-top: 60px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .contents-container {
+      width: 100%;
+      max-width: 425px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: "LINESeedKR-Bd";
+      .mobile-header {
+        display: block;
+        font-size: 14px;
+      }
+      .content {
+        padding: 20px 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        p {
+          font-size: 12px;
+        }
+        .image {
+          width: 300px;
+        }
+      }
     }
   }
 }

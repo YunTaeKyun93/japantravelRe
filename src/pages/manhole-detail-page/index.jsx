@@ -7,6 +7,7 @@ import styles from "./manhole-detail.module.scss";
 import ImageComponent from "./../../components/image/index";
 import { ImLocation2 } from "react-icons/im";
 import Footer from "./../../components/footer/index";
+import MobileNavBar from "./../../components/mobile-nav-bar/index";
 
 const ManholeDetail = () => {
   const ss = classNames.bind(styles);
@@ -21,6 +22,7 @@ const ManholeDetail = () => {
   return (
     <div className={ss("wrapper")}>
       <Navbar.Auto />
+      <MobileNavBar />
       <ImageComponent
         url={currentManhole.bannerImage.imageUrl}
         className={ss("banner-image")}

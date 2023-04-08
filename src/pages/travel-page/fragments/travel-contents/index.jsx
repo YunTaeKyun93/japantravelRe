@@ -13,9 +13,14 @@ const TravelContents = ({ logic }) => {
         <Map
           center={logic.departureArea}
           zoom={logic.selectedPlace == null ? 10 : 20}
-          mediaMarkers={logic.mediaMarkers}
-          requsetModalOpen={logic.requsetModalOpen}
-          selectDepartureArea={logic.selectDepartureArea}
+          mediaMarkers={logic.mediaMarkers.map((marker) => {
+            return {
+              ...marker,
+              onClick: async () => {
+                await logic.openMediaModalByMarker(marker);
+              }
+            };
+          })}
         />
       </div>
     </div>

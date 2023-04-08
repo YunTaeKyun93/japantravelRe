@@ -13,9 +13,6 @@ const emptyArray = [];
 const Map = ({
   center,
   mediaMarkers = emptyArray,
-  requsetModalOpen,
-  currentMedia,
-  selectDepartureArea,
   zoom = 10,
 }) => {
   const ss = classNames.bind(styles);
@@ -27,9 +24,7 @@ const Map = ({
   useMediaMarkers({
     map,
     mediaMarkers,
-    requsetModalOpen,
-    currentMedia,
-    selectDepartureArea
+
   });
   return (
     <Wrapper apiKey={apiKey} render={render}>

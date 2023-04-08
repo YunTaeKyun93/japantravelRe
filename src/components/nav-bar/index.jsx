@@ -46,17 +46,12 @@ const NavBar2 = ({ isBackgroundActive = true }) => {
             )}
           />
           <div className={ss("menu-list")}>
+          <span onClick={() => navigator("/")}>Home</span>
             <span onClick={() => navigator("/about")}>About</span>
             <span onClick={() => navigator("/travel")}>Travel</span>
             <span onClick={() => navigator("/manholes")}>Manhole</span>
           </div>
         </div>
-        {/* <div className={ss("service-container")}>
-          <div className={ss("menu-list")}>
-            <span>Sign In</span>
-            <span>Sign Up</span>
-          </div>
-        </div> */}
       </div>
     </div>
   );
@@ -84,40 +79,40 @@ NavBar2.Auto = AutoNavBar2;
 
 export default NavBar2;
 
-const Navbar = ({ scrollDir, currentPage }) => {
-  const ss = classNames.bind(styles);
-  const navigator = useNavigate();
-  return (
-    <div
-      className={ss(
-        `${scrollDir === "scrolling down" ? "down-wrapper" : "wrapper"}`
-      )}
-    >
-      <div className={ss("navbar-container")}>
-        <div className={ss("menu-container")}>
-          {scrollDir === "scrolling down" && (
-            <LogoBlackImg
-              onClick={() => navigator("/")}
-              style={{ width: "200px", cursor: "pointer" }}
-            />
-          )}
+// const Navbar = ({ scrollDir, currentPage }) => {
+//   const ss = classNames.bind(styles);
+//   const navigator = useNavigate();
+//   return (
+//     <div
+//       className={ss(
+//         `${scrollDir === "scrolling down" ? "down-wrapper" : "wrapper"}`
+//       )}
+//     >
+//       <div className={ss("navbar-container")}>
+//         <div className={ss("menu-container")}>
+//           {scrollDir === "scrolling down" && (
+//             <LogoBlackImg
+//               onClick={() => navigator("/")}
+//               style={{ width: "200px", cursor: "pointer" }}
+//             />
+//           )}
 
-          {scrollDir === "scrolling up" && <div className={ss("block")}></div>}
-          <div className={ss("menu-list")}>
-            <span onClick={() => navigator("/about")}>About</span>
-            <span onClick={() => navigator("/travel")}>Travel</span>
-          </div>
-        </div>
-        <div className={ss("service-container")}>
-          <div className={ss("menu-list")}>
-            <span>Sign In</span>
-            <span>Sign Up</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
+//           {scrollDir === "scrolling up" && <div className={ss("block")}></div>}
+//           <div className={ss("menu-list")}>
+//             <span onClick={() => navigator("/about")}>About</span>
+//             <span onClick={() => navigator("/travel")}>Travel</span>
+//           </div>
+//         </div>
+//         <div className={ss("service-container")}>
+//           <div className={ss("menu-list")}>
+//             <span>Sign In</span>
+//             <span>Sign Up</span>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
 
 // isSomething ? 'class-a' : 'class-b' (X)
 // `class-base ${isSomething && 'class-x'}`

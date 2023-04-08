@@ -10,10 +10,14 @@ const AboutContents = () => {
   return (
     <div className={ss("wrapper")}>
       <div className={ss("contents-container")}>
+        <div className={ss("mobile-header")}>
+          <h2>애니메이션 세계에 있는 것처럼 느끼게 하는</h2>
+          <h2>일본 애니메이션의 실제 장소를 여행 가고 싶다면</h2>
+        </div>
         <div className={ss("contents")}>
-          <div className={ss("content1")}>
-            <div>
-              <h3>코로나와 애니메이션</h3>
+          <div className={ss("content")}>
+            <div className={ss("content-description")}>
+              <h2>코로나와 애니메이션</h2>
               <p>
                 2020년, 코로나 팬데믹으로 우리의 일상이 몇 년간 멈춰있던 당시
               </p>
@@ -47,12 +51,12 @@ const AboutContents = () => {
               </p>
               <p>일반 대중들에게도 평범한 취미가 되었습니다.</p>
             </div>
-            <AboutContentImg1 style={{ width: "300px" }} />
+            <AboutContentImg1 className={ss("image", "image-column")} />
           </div>
-          <div className={ss("content1")}>
-            <AboutContentImg2 style={{ width: "500px", borderRadius: "4px" }} />
-            <div>
-              <h3>실제 장소와 애니메이션</h3>
+          <div className={ss("content")}>
+            <AboutContentImg2 className={ss("image")} />
+            <div className={ss("content-description")}>
+              <h2>실제 장소와 애니메이션</h2>
               <p>
                 애니메이션의 작화는 이제 시청자들이 보게 되는 지표중 하나가 될
                 만큼
@@ -80,9 +84,9 @@ const AboutContents = () => {
               <p>배경으로 쓰는 경우가 많아 졌습니다.</p>
             </div>
           </div>
-          <div className={ss("content1")}>
-            <div>
-              <h3>색다른 여행</h3>
+          <div className={ss("content")}>
+            <div className={ss("content-description")}>
+              <h2>색다른 여행</h2>
               <p>코로나 규제완화로 인해 해외여행을 갈 수 있게 된 지금</p>
               <p>
                 흔히 얘기하는 애니메이션 장소 성지순례를 하는 사람이 많아
@@ -95,9 +99,12 @@ const AboutContents = () => {
                 저처럼 애니메이션 명소를 찾는 사람들에게 보다 편하게 찾아 갈 수
               </p>
               <p>있다면 도움이 될 것 같다는 마음에 시작하게 되었습니다.</p>
-              <p>그 중에서도 일본의 수도 도쿄의 애니메이션 장소를 제공할 것입니다.</p>
+              <p>
+                그 중에서도 일본의 수도 도쿄의 애니메이션 장소를 제공할
+                것입니다.
+              </p>
             </div>
-            <AboutContentImg3 />
+            <AboutContentImg3 className={ss("image")} />
           </div>
         </div>
       </div>

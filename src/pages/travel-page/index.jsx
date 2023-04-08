@@ -6,7 +6,9 @@ import useLogic from "./use-logic";
 import TravelBanner from "./fragments/travel-banner/";
 import TravelContents from "./fragments/travel-contents";
 import MediaModal from "../../modals/media-modal";
-import Footer from './../../components/footer/index';
+import Footer from "./../../components/footer/index";
+import MobileNavBar from './../../components/mobile-nav-bar/index';
+import MobileBanner from './fragments/mobile-banner/index';
 
 const TravelPage = () => {
   const logic = useLogic();
@@ -14,14 +16,18 @@ const TravelPage = () => {
   return (
     <div className={ss("wrapper")}>
       <Navbar.Auto />
+      <MobileNavBar/>
+      <MobileBanner/>
       <TravelBanner />
       <TravelContents logic={logic} />
       <MediaModal
         isOpen={logic.isMediaModalOpen}
-        onRequestClose={() => logic.setIsMediaModalOpen(false)}
-        logic={logic}
+        onRequestClose={logic.closeMediaModal}
+        place={logic.mediaModalPlace}
+        relatedPlace={logic.mediaModalRelatedPlace}
+        
       />
-      <Footer/>
+      <Footer />
     </div>
   );
 };

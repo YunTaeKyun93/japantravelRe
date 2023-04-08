@@ -1,10 +1,34 @@
 .wrapper {
   width: 100vw;
-  height: 565px;
+  display: flex;
+  justify-content: center;
+  .banner-container {
+    .banner-image {
+      width: 100%;
+      height: 500px;
+    }
+  }
+}
+@media screen and (max-width: 1024px) {
+  .wrapper {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    .banner-container {
+      width: 100%;
+      max-width: 1024px;
+      display: flex;
+      justify-content: center;
+      .banner-image {
+        width: 100%;
+        height: 500px;
+      }
+    }
+  }
+}
 
-  .banner-image {
-    width: 100%;
-    max-width: 1920px;
-    height: 500px;
+@media screen and (max-width: 768px) {
+  .wrapper {
+    display: none;
   }
 }

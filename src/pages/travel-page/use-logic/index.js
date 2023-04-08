@@ -4,6 +4,7 @@ import useReadAnimeList from "./../../../services/read-anime-list";
 import useReadAnime from "./../../../services/read-anime";
 import useReadPlaces from "../../../services/read-places/index";
 import useReadRelatedPlace from "../../../services/read-related-place";
+
 const defaultDepartureArea = {
   lat: 35.652832,
   lng: 139.79
@@ -19,15 +20,40 @@ const useLogic = () => {
   const [currentAnime, setCurrentAnime] = useState(null);
   const [swiperVersion, setSwiperVersion] = useState(0);
   const [places, setPlaces] = useState([]);
-  const [focusedLocation, setFocusedLocation] = useState(undefined);
-  const [isMediaModalOpen, setIsMediaModalOpen] = useState(false);
+  const [focusedLocation, setFocusedLocation] = useState(null);
+
   const [selectedPlace, setSelectedPlace] = useState(null);
   const [selectedRelatedPlace, setSelctedRelatedPlacec] = useState(null);
 
+  const [mediaModalParams, setMediaModalParams] = useState(null);
+
+  const openMediaModal = ({ place, relatedPlace }) => {
+    setMediaModalParams({ place, relatedPlace });
+  };
+
+  const openMediaModalByMarker = async (marker) => {
+    const place = marker;
+    const relatedPlace = await readRelatedPlace(marker._id);
+    console.log({
+      openModal: {
+        place,
+        relatedPlace
+      }
+    });
+    openMediaModal({ place, relatedPlace });
+  };
+
+  const closeMediaModal = () => {
+    setMediaModalParams(null);
+  };
+
+  const mediaModalPlace = mediaModalParams?.place;
+
+  const mediaModalRelatedPlace = mediaModalParams?.relatedPlace;
+
   const selectDepartureArea = async (place) => {
-    console.log(1.5, place);
     setSelectedPlace(place);
-    console.log(2, selectedPlace);
+
     setFocusedLocation({
       position: place.coordinates,
       name: place.name
@@ -94,9 +120,9 @@ const useLogic = () => {
     impl();
   }, [currentAnime]);
 
-  const requsetModalOpen = () => {
-    setIsMediaModalOpen(true);
-  };
+  // const requsetModalOpen = () => {
+  //   setIsMediaModalOpen(true);
+  // };
 
   return {
     navigator,
@@ -109,12 +135,19 @@ const useLogic = () => {
     swiperVersion,
     selectDepartureArea,
     departureArea: focusedLocation?.position ?? defaultDepartureArea,
-    isMediaModalOpen,
-    setIsMediaModalOpen,
-    requsetModalOpen,
+    // new from
+    isMediaModalOpen: mediaModalParams != null,
+    // openMediaModal,
+    openMediaModalByMarker,
+    closeMediaModal,
+    mediaModalPlace,
+    mediaModalRelatedPlace,
+    // new to
+    // setIsMediaModalOpen,
+    // requsetModalOpen,
     selectedPlace,
-    setSelectedPlace,
-    selectedRelatedPlace
+    selectedRelatedPlace,
+    setSelectedPlace
   };
 };
 export default useLogic;

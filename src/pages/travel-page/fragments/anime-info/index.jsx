@@ -2,13 +2,9 @@ import React, { useState } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
 import classNames from "classnames/bind";
 import styles from "./anime-info.module.scss";
-import AnimePoster from "./../../../../components/anime-poster";
 import { BiChevronDown, BiChevronUp, BiChevronsRight } from "react-icons/bi";
-import SwiperCore, { Autoplay, Pagination, Scrollbar } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "./swiper.css";
 
-SwiperCore.use([Autoplay, Pagination, Scrollbar]);
+import MovieCard from "./../movie-card/index";
 
 const AnimeInfo = ({ logic }) => {
   const ss = classNames.bind(styles);
@@ -21,30 +17,12 @@ const AnimeInfo = ({ logic }) => {
   const places = logic.places;
   return (
     <div className={ss("card-container")}>
+      <div className={ss("movie-title")}>
+        <h2>{anime.title}</h2>
+      </div>
+      
       <div className={ss("card-main")}>
-        <div className={ss("card-header")}>{anime.title}</div>
-        <div className={ss("card-contents")}>
-          <Swiper
-            key={logic.swiperVersion}
-            className={`my-swiper ${ss("carousel-container")}`}
-            slidesPerView={1}
-            autoplay={{
-              delay: 2500
-            }}
-            loop
-            scrollbar={{ draggable: false }}
-            pagination={{ clickable: false }}
-          >
-            {anime.images.map((image) => (
-              <SwiperSlide key={image.imageUrl}>
-                <AnimePoster
-                  url={image.imageUrl}
-                  className={ss("poster-img")}
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
+        <MovieCard logic={logic} />
       </div>
       <div className={ss("card-border")} />
       <div className={ss("card-footer")}>

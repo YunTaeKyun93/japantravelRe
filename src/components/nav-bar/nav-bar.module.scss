@@ -1,6 +1,6 @@
+$mobile-breakpoint: 768px;
 .wrapper {
   width: 100vw;
-
   height: 63px;
   display: flex;
   justify-content: center;
@@ -44,13 +44,12 @@
       }
 
       .logo {
-        visibility: hidden; // display: none;
+        visibility: hidden;
         width: 200px;
         cursor: pointer;
       }
       .logo-scroll-down {
-        visibility: visible; // display: none;
-        // display: block;
+        visibility: visible;
       }
     }
     .service-container {
@@ -79,4 +78,20 @@
   background-color: white;
   color: #000;
   transition: 0.3s;
+}
+
+@media screen and (max-width: $mobile-breakpoint) {
+  .wrapper {
+    visibility: hidden;
+    .navbar-container {
+      .menu-container {
+        .logo-scroll-down {
+          visibility: hidden;
+        }
+      }
+    }
+  }
+  .wrapper-scroll-down {
+    visibility: hidden;
+  }
 }

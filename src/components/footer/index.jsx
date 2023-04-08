@@ -14,7 +14,9 @@ const Footer = () => {
         <LogoBlackImg
           className={ss("logo")}
           onClick={() => {
+         
             navigator("/");
+           
           }}
         />
         <div className={ss("footer-description")}>
@@ -31,7 +33,6 @@ const Footer = () => {
               className={ss("copyright-logo")}
             />
           </a>
-
           <p>저작권 ©Tokyo Convention & Visitors Bureau. All rights reserved</p>
         </div>
       </div>

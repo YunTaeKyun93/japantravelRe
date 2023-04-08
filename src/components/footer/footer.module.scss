@@ -24,12 +24,53 @@
       flex-direction: column;
       align-items: flex-end;
       gap: 10px;
-      p{
+      p {
         margin: 0;
         font-size: 14px;
       }
       .copyright-logo {
         cursor: pointer;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    font-family: "LINESeedKR-Bd";
+    border-top: 1px solid black;
+    margin-top: 100px;
+
+    .footer-container {
+      padding: 20px;
+      width: 100%;
+      .logo {
+        cursor: pointer;
+        width: 150px;
+      }
+      .footer-description {
+        display: flex;
+        justify-content: flex-start;
+        p {
+          font-size: 10px;
+        }
+      }
+      .copyright {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 5px;
+        p {
+          margin: 0;
+          font-size: 8px;
+        }
+        .copyright-logo {
+          cursor: pointer;
+        }
       }
     }
   }

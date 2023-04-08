@@ -6,12 +6,14 @@ import styles from "./manhole-page.module.scss";
 import ManholeIntroduction from './fragments/manhole-introduction/index';
 import useLogic from './use-logic';
 import Footer from './../../components/footer/index';
+import MobileNavBar from "../../components/mobile-nav-bar";
 const ManholePage = () => {
   const ss = classNames.bind(styles);
 const logic = useLogic();
   return (
-    <div>
+    <div className={ss('wrapper')}>
       <Navbar.Auto />
+      <MobileNavBar/>
       <ManholeBanner />
       <ManholeIntroduction logic={logic}/>
       <Footer/>

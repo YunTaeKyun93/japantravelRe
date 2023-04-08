@@ -52,3 +52,62 @@
     }
   }
 }
+@media screen and (max-width: 425px) {
+  .wrapper {
+    width: 100vw;
+    max-width: 425px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "LINESeedKR-Bd";
+    .banner-image {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+    .manhole-container {
+      position: relative;
+      margin-left: 0%;
+      top: -100px;
+      width: 100%;
+      .manhole-info {
+        max-width: 400px;
+        height: 100%;
+        background-color: rgba($color: #000000, $alpha: 0.5);
+        color: white;
+        padding: 5px;
+
+        h1,
+        h2 {
+          font-size: 20px;
+          margin: 0;
+        }
+        span {
+          font-size: 12px;
+        }
+      }
+    }
+    .detail-container {
+      width: 100%;
+      max-width: 425px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 50px;
+      p {
+        font-size: 12px;
+      }
+      .image-container {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        .image-item {
+          object-fit: cover;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}

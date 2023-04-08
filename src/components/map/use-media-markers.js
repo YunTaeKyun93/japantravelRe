@@ -9,9 +9,9 @@ const infoWindowContents = ({ title, description }) => `
 
 const useMediaMarkers = ({
   map,
-  mediaMarkers,
-  requsetModalOpen,
-  selectDepartureArea
+  mediaMarkers
+  // requsetModalOpen,
+  // selectDepartureArea
 }) => {
   const [mediaMarkerInsts, setMediaMarkerInsts] = useState([]);
   const updateMediaMarkers = () => {
@@ -39,9 +39,10 @@ const useMediaMarkers = ({
       });
 
       newMediaMarkerInst.addListener("click", () => {
-        requsetModalOpen();
-        console.log(1, marker);
-        selectDepartureArea(marker);
+        console.log({ marker });
+        if ("onClick" in marker) {
+          marker.onClick();
+        }
       });
 
       newMediaMarkerInst.addListener("mouseover", () => {

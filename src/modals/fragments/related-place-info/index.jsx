@@ -7,21 +7,19 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "./swiper.css";
 import { FiX } from "react-icons/fi";
 
-const RelatedPlaceInfo = ({ logic }) => {
+const RelatedPlaceInfo = ({ place, relatedPlace, onRequestClose }) => {
   const ss = classNames.bind(styles);
   // if (logic.relatedPlace== null) {
   //   return (
   //     <ClipLoader color="blue" loading={logic.isManholesLoading} size={350} />
   //   );
   // }
-  const place = logic.selectedPlace;
-  const relatedPlace = logic.selectedRelatedPlace;
-  console.log(4, place);
-  console.log(4.5, relatedPlace);
+
+
   return (
     <div className={ss("wrapper")}>
       <div className={ss("close-btn")}>
-        <FiX onClick={() => logic.setIsMediaModalOpen(false)} className={ss('close')}/>
+        <FiX onClick={onRequestClose} className={ss('close')}/>
       </div>
       <h1>{place.name}</h1>
       <div className={ss("border")}></div>

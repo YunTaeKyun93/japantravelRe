@@ -1,0 +1,45 @@
+@media screen and (min-width: 769px) {
+  .wrapper {
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  .wrapper {
+    position: relative;
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .content {
+      width: 100vw;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      iframe {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 0;
+      }
+      h2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        margin: 0;
+        padding: 0;
+        font-size: 16vw;
+        line-height: 20vh;
+        mix-blend-mode: screen;
+        text-align: center;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

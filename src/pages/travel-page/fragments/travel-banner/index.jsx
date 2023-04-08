@@ -7,7 +7,7 @@ const TravelBanner = () => {
   return (
     <div className={ss("wrapper")}>
       <div className={ss("banner-container")}>
-        <TravelBannerImg className={ss('banner-image')} />
+        <TravelBannerImg className={ss("banner-image")} />
       </div>
     </div>
   );

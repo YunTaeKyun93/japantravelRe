@@ -1,0 +1,79 @@
+.movie-card {
+    position: relative;
+    width: 350px;
+    height: 600px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+  
+    .carousel-container {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+  
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(0deg, #d199ca 10%, transparent);
+        transition: 0.5s;
+        z-index: 6;
+        opacity: 0;
+      }
+  
+      &:hover::before {
+        opacity: 1;
+      }
+  
+      .poster-img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        z-index: 7;
+      }
+    }
+  
+    .story-summary {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 60%;
+      background-color: rgba(13, 54, 76, 0.9);
+      color: #fff;
+      transform: translateY(100%);
+      transition: 0.5s;
+      z-index: 6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      line-height: 1.5;
+      padding-top: 10px;
+      h3{
+          margin-top: 10px;
+      }
+      .story {
+        display: flex;
+        padding: 10px;
+        p {
+          font-size: 14px;
+          letter-spacing: 1px;
+        }
+      }
+    }
+  
+    &:hover .story-summary {
+      transform: translateY(0%);
+    }
+  }
+  
