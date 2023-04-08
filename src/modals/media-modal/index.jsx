@@ -14,7 +14,13 @@ const MediaModal = ({ isOpen, onRequestClose, place, relatedPlace }) => {
       onRequestClose={onRequestClose}
       className={ss("wrapper")}
     >
-      {place != null && relatedPlace != null && <RelatedPlaceInfo place={place} relatedPlace={relatedPlace} onRequestClose={onRequestClose}/>}
+      {place != null && relatedPlace != null && (
+        <RelatedPlaceInfo
+          place={place}
+          relatedPlace={relatedPlace}
+          onRequestClose={onRequestClose}
+        />
+      )}
     </Modal>
   );
 };

@@ -11,7 +11,7 @@ const AnimeInfo = ({ logic }) => {
   const [storyMenuOpen, setStoryMenuOpen] = useState(false);
 
   if (logic.isAnimeInfoLoading) {
-    return <div></div>;
+    return <div>Loading...</div>;
   }
   const anime = logic.currentAnime;
   const places = logic.places;

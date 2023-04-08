@@ -36,6 +36,7 @@
     /* Fix of Webkit flickering */
     z-index: 0;
     display: block;
+   
   }
   .swiper-vertical > .swiper-wrapper {
     flex-direction: column;
@@ -44,7 +45,7 @@
     position: relative;
     width: 100%;
     height: 100%;
-    z-index: 1;
+    z-index: 0;
     display: flex;
     transition-property: transform;
     transition-timing-function: var(--swiper-wrapper-transition-timing-function, initial);
@@ -116,7 +117,7 @@
     width: 100%;
     height: 100%;
     pointer-events: none;
-    z-index: 10;
+    z-index: 0;
   }
   .swiper-3d .swiper-slide-shadow {
     background: rgba(0, 0, 0, 0.15);
@@ -186,7 +187,7 @@
     top: 50%;
     margin-left: -21px;
     margin-top: -21px;
-    z-index: 10;
+    z-index: 0;
     transform-origin: 50%;
     box-sizing: border-box;
     border: 4px solid var(--swiper-preloader-color, var(--swiper-theme-color));

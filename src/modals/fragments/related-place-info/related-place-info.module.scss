@@ -1,48 +1,173 @@
 .wrapper {
+  position: absolute;
+  top: 80px;
   max-width: 1180px;
   width: 100%;
   border: 1px solid black;
   background-color: white;
-  padding: 20px;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   gap: 10px;
   font-family: "LINESeedKR-Bd";
+
+  h1{
+    margin-left: 20px;
+  }
   .close-btn {
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    font-size: 20px;
+    font-size: 30px;
     transition: 0.5s;
-    .close{cursor: pointer;}
+    height: 30px;
+    background-color: blue;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    .close {
+      color: #fff;
+      cursor: pointer;
+      margin-right: 10px;
+    }
     :hover {
       transform: rotate(180deg);
-      color: red;
+      color: plum;
       transition: 0.5s;
     }
   }
   .image-container {
     width: 100%;
     display: flex;
-    .carousel-container {
-      width: 580px;
-      height: 480px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 10px;
-      .poster-img {
-        width: 590px;
-        height: 500px;
-      }
-    }
   }
   .border {
     width: 100%;
     height: 2px;
     background-color: gray;
   }
-  .conent-container {
+  .content-container{
+    p{
+      margin-left: 15px;
+      user-select: all;
+    }
   }
+}
+@media screen and (max-width:1024px){
+  .wrapper {
+    position: absolute;
+    top: 80px;
+    max-width: 800px;
+    width: 100%;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: "LINESeedKR-Bd";
+  
+
+    h1{
+      margin: 5px 0;
+      margin-left: 20px;
+    }
+    .close-btn {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      font-size: 30px;
+      transition: 0.5s;
+      height: 30px;
+      background-color: blue;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      .close {
+        color: #fff;
+        cursor: pointer;
+        margin-right: 10px;
+      }
+      :hover {
+        transform: rotate(180deg);
+        color: plum;
+        transition: 0.5s;
+      }
+    }
+    .image-container {
+      width: 100%;
+      display: flex;
+      gap: 10px;
+    }
+    .border {
+      width: 100%;
+      height: 2px;
+      background-color: gray;
+    }
+    .content-container{
+      p{
+        margin-left: 15px;
+        user-select: all;
+      }
+    }
+  }
+  
+}
+
+@media screen and (max-width:426px){
+  .wrapper {
+    position: absolute;
+    top: 80px;
+    max-width: 800px;
+    width: 100%;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: "LINESeedKR-Bd";
+  
+
+    h1{
+      font-size: 20px;
+      margin: 5px 0;
+      margin-left: 16px;
+    }
+    .close-btn {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      font-size: 30px;
+      transition: 0.5s;
+      height: 30px;
+      background-color: blue;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      .close {
+        color: #fff;
+        cursor: pointer;
+        margin-right: 10px;
+      }
+      :hover {
+        transform: rotate(180deg);
+        color: plum;
+        transition: 0.5s;
+      }
+    }
+    .image-container {
+      width: 100%;
+      display: flex;
+      gap: 10px;
+    }
+    .border {
+      width: 100%;
+      height: 2px;
+      background-color: gray;
+    }
+    .content-container{
+      p{
+        margin-left: 15px;
+       font-size: 12px;
+      }
+    }
+  }
+  
 }

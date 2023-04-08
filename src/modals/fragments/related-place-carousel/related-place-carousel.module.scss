@@ -1,0 +1,60 @@
+.carousel-container {
+  width: 580px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+
+  .poster-img {
+    width: 580px;
+    height: 300px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .carousel-container {
+    width: 390px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+
+    .poster-img {
+      width: 390px;
+      height: 300px;
+    }
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .carousel-container {
+    width: 200px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+
+    .poster-img {
+      width: 200px;
+      height: 250px;
+    }
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .carousel-container {
+    width: 180px;
+    height: 230px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+
+    .poster-img {
+      width: 180px;
+      height: 230px;
+    }
+  }
+}
